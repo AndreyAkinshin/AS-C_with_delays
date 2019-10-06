@@ -180,6 +180,15 @@ shinyUI(fluidPage(
                   step = 0.01)
       ,
 
+      # Slider for m7
+      sliderInput("m7",
+                  "m7",
+                  min = 0.0,
+                  max = 15.0,
+                  value = 1,
+                  step = 0.01)
+      ,
+
       # Slider for kx
       sliderInput("kx",
                   "kx",

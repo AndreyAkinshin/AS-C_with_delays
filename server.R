@@ -38,6 +38,7 @@ shinyServer(function(input, output) {
     m4 <- input$m4
     m5 <- input$m5
     m6 <- input$m6
+    m7 <- input$m7
     kx <- input$kx
     ky <- input$ky
     kz <- input$kz
@@ -110,7 +111,7 @@ shinyServer(function(input, output) {
     y_helper <- function(t, lagPoint, currentPoint = lagPoint) {
       c(x, y, z, u, w, p) %=% lagPoint
       c(x_curr, y_curr, z_curr, u_curr, w_curr, p_curr) %=% currentPoint
-      ky * C / (1 + u) - m2 * y_curr
+      ky * C / (1 + u ^ m7) - m2 * y_curr
     }
 
     # Modelling for y'
@@ -243,6 +244,7 @@ shinyServer(function(input, output) {
     m4 <- input$m4
     m5 <- input$m5
     m6 <- input$m6
+    m7 <- input$m7
     kx <- input$kx
     ky <- input$ky
     kz <- input$kz
@@ -335,6 +337,7 @@ shinyServer(function(input, output) {
     m4 <- input$m4
     m5 <- input$m5
     m6 <- input$m6
+    m7 <- input$m7
     kx <- input$kx
     ky <- input$ky
     kz <- input$kz
@@ -369,7 +372,7 @@ shinyServer(function(input, output) {
       "<br>",
       "x' = kx * (sigma1(D * x) + sigma3(z) + sigma5(w)) / ((1 + Gro * y) * (1 + EMC * x)) - m1 * x * (1 + p_curr * UB * SINA)",
       "<br>",
-      "y' = ky * C / (1 + u) - m2 * y_curr",
+      "y' = ky * C / (1 + u ^ m7) - m2 * y_curr",
       "<br>",
       "z' = kz * s3(D * x) - m3 * z_curr",
       "<br>",
@@ -438,6 +441,8 @@ shinyServer(function(input, output) {
       paste0("m5 = ", m5),
       "<br>",
       paste0("m6 = ", m6),
+      "<br>",
+      paste0("m7 = ", m7),
       "<br>",
       paste0("kx = ", kx),
       "<br>",
