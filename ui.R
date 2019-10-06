@@ -117,9 +117,27 @@ shinyUI(fluidPage(
                   step = 0.01)
       ,
 
-      # Slider for n
-      sliderInput("n",
-                  "n",
+      # Slider for n1
+      sliderInput("n1",
+                  "n1",
+                  min = 0.0,
+                  max = 15.0,
+                  value = 2,
+                  step = 0.01)
+      ,
+
+      # Slider for n3
+      sliderInput("n3",
+                  "n3",
+                  min = 0.0,
+                  max = 15.0,
+                  value = 2,
+                  step = 0.01)
+      ,
+
+      # Slider for n5
+      sliderInput("n5",
+                  "n5",
                   min = 0.0,
                   max = 15.0,
                   value = 2,

@@ -32,7 +32,9 @@ shinyServer(function(input, output) {
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
-    n <- input$n
+    n1 <- input$n1
+    n3 <- input$n3
+    n5 <- input$n5
     m1 <- input$m1
     m2 <- input$m2
     m3 <- input$m3
@@ -68,13 +70,13 @@ shinyServer(function(input, output) {
     w0 <- input$w0
     p0 <- input$p0
     sigma1 <- function (v) {
-      h(v) * d1 * v ^ n / (1 + v ^ n)
+      h(v) * d1 * v ^ n1 / (1 + v ^ n1)
     }
     sigma3 <- function (v) {
-      h(v) * d3 * v ^ n / (1 + v ^ n)
+      h(v) * d3 * v ^ n3 / (1 + v ^ n3)
     }
     sigma5 <- function (v) {
-      h(v) * d5 * v ^ n / (1 + v ^ n)
+      h(v) * d5 * v ^ n5 / (1 + v ^ n5)
     }
     s3 <- function (v) {
       h(v) * a3 * exp((v - b3) / c3) / (1 + exp((v - b3) / c3))
@@ -239,7 +241,9 @@ shinyServer(function(input, output) {
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
-    n <- input$n
+    n1 <- input$n1
+    n3 <- input$n3
+    n5 <- input$n5
     m1 <- input$m1
     m2 <- input$m2
     m3 <- input$m3
@@ -275,13 +279,13 @@ shinyServer(function(input, output) {
     w0 <- input$w0
     p0 <- input$p0
     sigma1 <- function (v) {
-      h(v) * d1 * v ^ n / (1 + v ^ n)
+      h(v) * d1 * v ^ n1 / (1 + v ^ n1)
     }
     sigma3 <- function (v) {
-      h(v) * d3 * v ^ n / (1 + v ^ n)
+      h(v) * d3 * v ^ n3 / (1 + v ^ n3)
     }
     sigma5 <- function (v) {
-      h(v) * d5 * v ^ n / (1 + v ^ n)
+      h(v) * d5 * v ^ n5 / (1 + v ^ n5)
     }
     s3 <- function (v) {
       h(v) * a3 * exp((v - b3) / c3) / (1 + exp((v - b3) / c3))
@@ -333,7 +337,9 @@ shinyServer(function(input, output) {
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
-    n <- input$n
+    n1 <- input$n1
+    n3 <- input$n3
+    n5 <- input$n5
     m1 <- input$m1
     m2 <- input$m2
     m3 <- input$m3
@@ -389,11 +395,11 @@ shinyServer(function(input, output) {
       "<br>",
       "Aux functions:",
       "<br>",
-      "sigma1 ( v )  = h(v) * d1 * v ^ n / (1 + v ^ n)",
+      "sigma1 ( v )  = h(v) * d1 * v ^ n1 / (1 + v ^ n1)",
       "<br>",
-      "sigma3 ( v )  = h(v) * d3 * v ^ n / (1 + v ^ n)",
+      "sigma3 ( v )  = h(v) * d3 * v ^ n3 / (1 + v ^ n3)",
       "<br>",
-      "sigma5 ( v )  = h(v) * d5 * v ^ n / (1 + v ^ n)",
+      "sigma5 ( v )  = h(v) * d5 * v ^ n5 / (1 + v ^ n5)",
       "<br>",
       "s3 ( v )  = h(v) * a3 * exp((v - b3) / c3) / (1 + exp((v - b3) / c3))",
       "<br>",
@@ -433,7 +439,11 @@ shinyServer(function(input, output) {
       "<br>",
       paste0("C = ", C),
       "<br>",
-      paste0("n = ", n),
+      paste0("n1 = ", n1),
+      "<br>",
+      paste0("n3 = ", n3),
+      "<br>",
+      paste0("n5 = ", n5),
       "<br>",
       paste0("m1 = ", m1),
       "<br>",
