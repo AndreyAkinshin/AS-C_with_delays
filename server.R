@@ -28,6 +28,7 @@ shinyServer(function(input, output) {
     Gro <- input$Gro
     EMC <- input$EMC
     D <- input$D
+    L <- input$L
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
@@ -183,7 +184,7 @@ shinyServer(function(input, output) {
     p_helper <- function(t, lagPoint, currentPoint = lagPoint) {
       c(x, y, z, u, w, p) %=% lagPoint
       c(x_curr, y_curr, z_curr, u_curr, w_curr, p_curr) %=% currentPoint
-      h(t - 12) * (kp * s6(D * x) * (t - 12) ^ 2 / (1 + (t - 12) ^ 2) - m6 * p_curr)
+      h(t - 12) * (kp * s6(D * x) * (t - 12) ^ 2 / (L + (t - 12) ^ 2) - m6 * p_curr)
     }
 
     # Modelling for p'
@@ -234,6 +235,7 @@ shinyServer(function(input, output) {
     Gro <- input$Gro
     EMC <- input$EMC
     D <- input$D
+    L <- input$L
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
@@ -327,6 +329,7 @@ shinyServer(function(input, output) {
     Gro <- input$Gro
     EMC <- input$EMC
     D <- input$D
+    L <- input$L
     UB <- input$UB
     SINA <- input$SINA
     C <- input$C
@@ -380,7 +383,7 @@ shinyServer(function(input, output) {
       "<br>",
       "w' = kw * s5(D * x) - m5 * w_curr",
       "<br>",
-      "p' = h(t - 12) * (kp * s6(D * x) * (t - 12) ^ 2 / (1 + (t - 12) ^ 2) - m6 * p_curr)",
+      "p' = h(t - 12) * (kp * s6(D * x) * (t - 12) ^ 2 / (L + (t - 12) ^ 2) - m6 * p_curr)",
       "<br>",
       "--------------------------------------------------------------------------------",
       "<br>",
@@ -421,6 +424,8 @@ shinyServer(function(input, output) {
       paste0("EMC = ", EMC),
       "<br>",
       paste0("D = ", D),
+      "<br>",
+      paste0("L = ", L),
       "<br>",
       paste0("UB = ", UB),
       "<br>",
