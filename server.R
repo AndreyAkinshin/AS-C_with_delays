@@ -223,7 +223,8 @@ shinyServer(function(input, output) {
            geom_line(aes(y = plot_z, col = "Senseless: z(t)")) +
            geom_line(aes(y = plot_u, col = "Scratch: u(t)")) +
            geom_line(aes(y = plot_w, col = "Charlatan: w(t)")) +
-           geom_line(aes(y = plot_p, col = "Phyllopod: p(t)"))
+           geom_line(aes(y = plot_p, col = "Phyllopod: p(t)")) +
+           theme_bw()
   })
 
   # Rendering for aux_panel
@@ -319,7 +320,8 @@ shinyServer(function(input, output) {
            geom_line(aes(y = plot_s3, col = "s3(v)")) +
            geom_line(aes(y = plot_s4, col = "s4(v)")) +
            geom_line(aes(y = plot_s5, col = "s5(v)")) +
-           geom_line(aes(y = plot_s6, col = "s6(v)"))
+           geom_line(aes(y = plot_s6, col = "s6(v)")) +
+           theme_bw()
   })
 
   # Rendering for formulas_panel
